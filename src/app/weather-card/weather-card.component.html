@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="search">
+    <input type="text" [(ngModel)]="cityName" placeholder="Enter City name" (keyup.enter)="searchCity()">
+    <button (click)="searchCity()"><img src="assets/images/search.png" alt="search_img"></button>
+  </div>
+
+  <div *ngIf="weatherData" class="weather">
+    <img [src]="img" alt="weather_icon">
+    <h1 class="temp">{{weatherData.main.temp}}°C</h1>
+    <h2 class="city">{{weatherData.name}}</h2>
+    <div class="details">
+      <div class="col">
+        <img src="assets/images/humidity.png" alt="humidity_icon">
+        <div>
+          <p class="humidity">{{weatherData.main.humidity}}%</p>
+          <p>humidity</p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="assets/images/wind.png" alt="wind_icon">
+        <div>
+          <p class="wind">{{weatherData.wind.speed}} Km/h</p>
+          <p>Wind speed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
